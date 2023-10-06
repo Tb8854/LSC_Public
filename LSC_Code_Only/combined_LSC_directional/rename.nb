@@ -1,0 +1,1507 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     83974,       1499]
+NotebookOptionsPosition[     82323,       1463]
+NotebookOutlinePosition[     82723,       1479]
+CellTagsIndexPosition[     82680,       1476]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.869668665500846*^9, 3.8696686751083927`*^9}},
+ CellLabel->"In[72]:=",ExpressionUUID->"0a76ce4c-2efa-4f71-b890-952d39b8a717"],
+
+Cell[BoxData["\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional\"\>"], "Output",
+ CellChangeTimes->{3.870879129891089*^9, 3.871033268170059*^9, 
+  3.872780045607664*^9, 3.8727803266315947`*^9},
+ CellLabel->"Out[72]=",ExpressionUUID->"7cefc4d2-c909-4e6a-ae5e-98c9dd3e4eef"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "special", " ", "code", " ", "for", " ", "when", " ", "it", " ", "does", 
+    " ", "625", " ", "because", " ", "the", " ", "kernel", " ", 
+    "distribution", " ", "fails"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Monitor", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"RenameFile", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"FileNames", "[", 
+           RowBox[{"\"\<./side_emission/\>\"", "<>", 
+            RowBox[{"ToString", "[", "450", "]"}], "<>", "\"\</\>\"", "<>", 
+            RowBox[{"ToString", "[", "j", "]"}], "<>", "\"\</side_\>\"", "<>", 
+            RowBox[{"ToString", "[", "side", "]"}], "<>", "\"\<_\>\"", "<>", 
+            RowBox[{"ToString", "[", "j", "]"}], "<>", 
+            "\"\<_wavelength_450_photons_10000_*\>\""}], "]"}], "[", 
+          RowBox[{"[", "1", "]"}], "]"}], ",", 
+         RowBox[{"\"\<./side_emission/\>\"", "<>", 
+          RowBox[{"ToString", "[", "450", "]"}], "<>", "\"\</\>\"", "<>", 
+          RowBox[{"ToString", "[", "j", "]"}], "<>", "\"\</side_\>\"", "<>", 
+          RowBox[{"ToString", "[", "side", "]"}], "<>", "\"\<_\>\"", "<>", 
+          RowBox[{"ToString", "[", "j", "]"}], "<>", "\"\<_wavelength_\>\"", "<>", 
+          RowBox[{"ToString", "[", "450", "]"}], "<>", 
+          "\"\<_photons_10000.csv\>\""}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"j", ",", "1", ",", "90", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"side", ",", "1", ",", "4", ",", "1"}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "j", ",", "side"}], "}"}]}], "]"}], "*)"}]}]], "Input",\
+
+ CellChangeTimes->{{3.872780137068433*^9, 3.872780318012803*^9}, {
+  3.8727803985987663`*^9, 3.872780407837133*^9}, {3.872780500405355*^9, 
+  3.872780536250867*^9}},ExpressionUUID->"c088a4f2-9c83-4c82-a6ad-\
+ea3c65228eb3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RenameFile", "[", 
+  RowBox[{
+   RowBox[{"FileNames", "[", 
+    RowBox[{"\"\<./side_emission/\>\"", "<>", 
+     RowBox[{"ToString", "[", "450", "]"}], "<>", "\"\</\>\"", "<>", 
+     RowBox[{"ToString", "[", "1", "]"}], "<>", "\"\</side_\>\"", "<>", 
+     RowBox[{"ToString", "[", "1", "]"}], "<>", "\"\<_\>\"", "<>", 
+     RowBox[{"ToString", "[", "1", "]"}], "<>", 
+     "\"\<_wavelength_450_photons_10000_*\>\""}], "]"}], ",", 
+   RowBox[{"\"\<./side_emission/\>\"", "<>", 
+    RowBox[{"ToString", "[", "450", "]"}], "<>", "\"\</\>\"", "<>", 
+    RowBox[{"ToString", "[", "j", "]"}], "<>", "\"\</side_\>\"", "<>", 
+    RowBox[{"ToString", "[", "1", "]"}], "<>", "\"\<_\>\"", "<>", 
+    RowBox[{"ToString", "[", "1", "]"}], "<>", "\"\<_wavelength_\>\"", "<>", 
+    RowBox[{"ToString", "[", "450", "]"}], "<>", 
+    "\"\<_photons_10000.csv\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8727804670815563`*^9, 3.8727804730965977`*^9}},
+ CellLabel->"In[78]:=",ExpressionUUID->"cd6551ff-6036-41d4-893f-74dd9b3829a5"],
+
+Cell[BoxData[
+ RowBox[{"RenameFile", "[", 
+  RowBox[{
+   RowBox[{
+   "{", "\<\"./side_emission/450/1/side_1_1_wavelength_450_photons_10000_PLQE_\
+1_conc_0.0004.csv\"\>", "}"}], 
+   ",", "\<\"./side_emission/450/j/side_1_1_wavelength_450_photons_10000.csv\"\
+\>"}], "]"}]], "Output",
+ CellChangeTimes->{3.87278040862479*^9, 3.872780449807859*^9, 
+  3.872780482517825*^9},
+ CellLabel->"Out[78]=",ExpressionUUID->"ff327c46-9183-4e03-9d89-024b882862cb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FileNames", "[", 
+  RowBox[{"\"\<./side_emission/\>\"", "<>", 
+   RowBox[{"ToString", "[", "450", "]"}], "<>", "\"\</\>\"", "<>", 
+   RowBox[{"ToString", "[", "1", "]"}], "<>", "\"\</side_\>\"", "<>", 
+   RowBox[{"ToString", "[", "1", "]"}], "<>", 
+   "\"\<_wavelength_450_photons_10000_*\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.872780334705963*^9, 3.8727803355253*^9}},
+ CellLabel->"In[74]:=",ExpressionUUID->"cbfbec54-6bd9-4738-9abc-502d78528f33"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{{3.872780264677175*^9, 3.872780337224185*^9}},
+ CellLabel->"Out[74]=",ExpressionUUID->"5eafff47-a883-4245-b9f9-d4f981814741"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\"\<./side_emission/\>\"", "<>", 
+  RowBox[{"ToString", "[", "450", "]"}], "<>", "\"\</\>\"", "<>", 
+  RowBox[{"ToString", "[", "1", "]"}], "<>", "\"\</side_\>\"", "<>", 
+  RowBox[{"ToString", "[", "1", "]"}], "<>", 
+  "\"\<_wavelength_450_photons_10000_*\>\""}]], "Input",
+ CellLabel->"In[75]:=",ExpressionUUID->"a29ddd42-6834-452b-8d70-84ba3ad15feb"],
+
+Cell[BoxData["\<\"./side_emission/450/1/side_1_wavelength_450_photons_10000_*\
+\"\>"], "Output",
+ CellChangeTimes->{3.872780345278113*^9},
+ CellLabel->"Out[75]=",ExpressionUUID->"a696aa4b-e09d-457d-bf28-c662d6aab83f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"Monitor", "[", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"RenameFile", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"FileNames", "[", 
+          RowBox[{"\"\<./side_emission/\>\"", "<>", 
+           RowBox[{"ToString", "[", "451", "]"}], "<>", "\"\</\>\"", "<>", 
+           RowBox[{"ToString", "[", "j", "]"}], "<>", "\"\</*\>\""}], "]"}], 
+         "[", 
+         RowBox[{"[", "side", "]"}], "]"}], ",", 
+        RowBox[{"\"\<./side_emission/\>\"", "<>", 
+         RowBox[{"ToString", "[", "451", "]"}], "<>", "\"\</\>\"", "<>", 
+         RowBox[{"ToString", "[", "j", "]"}], "<>", "\"\</side_\>\"", "<>", 
+         RowBox[{"ToString", "[", "side", "]"}], "<>", "\"\<_\>\"", "<>", 
+         RowBox[{"ToString", "[", "j", "]"}], "<>", "\"\<_wavelength_\>\"", "<>", 
+         RowBox[{"ToString", "[", "451", "]"}], "<>", 
+         "\"\<_photons_10000.csv\>\""}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"j", ",", "1", ",", "90", ",", "1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"side", ",", "1", ",", "4", ",", "1"}], "}"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "j", ",", "side"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.870879204419606*^9, 3.870879281879447*^9}, {
+  3.870879331224022*^9, 3.870879519797374*^9}, {3.871033286124617*^9, 
+  3.871033307483347*^9}, {3.871033339766089*^9, 3.871033381462764*^9}, {
+  3.872780049107991*^9, 3.87278005254315*^9}, {3.872780545517228*^9, 
+  3.8727805550453167`*^9}},
+ CellLabel->"In[80]:=",ExpressionUUID->"dc94c341-4d88-43b0-b006-5479adc8c788"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/1/side_1_1_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/1/side_2_1_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/1/side_3_1_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/1/side_4_1_wavelength_451_photons_10000.csv\"\>\
+"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/2/side_1_2_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/2/side_2_2_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/2/side_3_2_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/2/side_4_2_wavelength_451_photons_10000.csv\"\>\
+"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/3/side_1_3_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/3/side_2_3_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/3/side_3_3_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/3/side_4_3_wavelength_451_photons_10000.csv\"\>\
+"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/4/side_1_4_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/4/side_2_4_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/4/side_3_4_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/4/side_4_4_wavelength_451_photons_10000.csv\"\>\
+"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/5/side_1_5_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/5/side_2_5_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/5/side_3_5_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/5/side_4_5_wavelength_451_photons_10000.csv\"\>\
+"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/6/side_1_6_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/6/side_2_6_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/6/side_3_6_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/6/side_4_6_wavelength_451_photons_10000.csv\"\>\
+"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/7/side_1_7_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/7/side_2_7_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/7/side_3_7_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/7/side_4_7_wavelength_451_photons_10000.csv\"\>\
+"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/8/side_1_8_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/8/side_2_8_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/8/side_3_8_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/8/side_4_8_wavelength_451_photons_10000.csv\"\>\
+"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/9/side_1_9_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/9/side_2_9_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/9/side_3_9_wavelength_451_photons_10000.csv\"\>\
+", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/9/side_4_9_wavelength_451_photons_10000.csv\"\>\
+"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/10/side_1_10_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/10/side_2_10_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/10/side_3_10_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/10/side_4_10_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/11/side_1_11_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/11/side_2_11_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/11/side_3_11_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/11/side_4_11_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/12/side_1_12_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/12/side_2_12_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/12/side_3_12_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/12/side_4_12_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/13/side_1_13_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/13/side_2_13_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/13/side_3_13_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/13/side_4_13_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/14/side_1_14_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/14/side_2_14_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/14/side_3_14_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/14/side_4_14_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/15/side_1_15_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/15/side_2_15_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/15/side_3_15_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/15/side_4_15_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/16/side_1_16_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/16/side_2_16_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/16/side_3_16_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/16/side_4_16_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/17/side_1_17_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/17/side_2_17_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/17/side_3_17_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/17/side_4_17_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/18/side_1_18_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/18/side_2_18_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/18/side_3_18_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/18/side_4_18_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/19/side_1_19_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/19/side_2_19_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/19/side_3_19_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/19/side_4_19_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/20/side_1_20_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/20/side_2_20_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/20/side_3_20_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/20/side_4_20_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/21/side_1_21_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/21/side_2_21_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/21/side_3_21_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/21/side_4_21_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/22/side_1_22_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/22/side_2_22_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/22/side_3_22_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/22/side_4_22_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/23/side_1_23_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/23/side_2_23_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/23/side_3_23_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/23/side_4_23_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/24/side_1_24_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/24/side_2_24_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/24/side_3_24_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/24/side_4_24_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/25/side_1_25_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/25/side_2_25_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/25/side_3_25_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/25/side_4_25_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/26/side_1_26_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/26/side_2_26_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/26/side_3_26_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/26/side_4_26_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/27/side_1_27_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/27/side_2_27_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/27/side_3_27_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/27/side_4_27_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/28/side_1_28_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/28/side_2_28_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/28/side_3_28_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/28/side_4_28_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/29/side_1_29_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/29/side_2_29_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/29/side_3_29_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/29/side_4_29_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/30/side_1_30_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/30/side_2_30_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/30/side_3_30_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/30/side_4_30_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/31/side_1_31_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/31/side_2_31_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/31/side_3_31_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/31/side_4_31_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/32/side_1_32_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/32/side_2_32_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/32/side_3_32_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/32/side_4_32_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/33/side_1_33_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/33/side_2_33_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/33/side_3_33_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/33/side_4_33_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/34/side_1_34_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/34/side_2_34_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/34/side_3_34_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/34/side_4_34_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/35/side_1_35_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/35/side_2_35_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/35/side_3_35_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/35/side_4_35_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/36/side_1_36_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/36/side_2_36_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/36/side_3_36_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/36/side_4_36_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/37/side_1_37_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/37/side_2_37_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/37/side_3_37_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/37/side_4_37_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/38/side_1_38_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/38/side_2_38_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/38/side_3_38_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/38/side_4_38_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/39/side_1_39_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/39/side_2_39_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/39/side_3_39_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/39/side_4_39_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/40/side_1_40_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/40/side_2_40_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/40/side_3_40_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/40/side_4_40_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/41/side_1_41_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/41/side_2_41_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/41/side_3_41_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/41/side_4_41_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/42/side_1_42_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/42/side_2_42_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/42/side_3_42_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/42/side_4_42_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/43/side_1_43_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/43/side_2_43_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/43/side_3_43_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/43/side_4_43_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/44/side_1_44_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/44/side_2_44_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/44/side_3_44_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/44/side_4_44_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/45/side_1_45_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/45/side_2_45_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/45/side_3_45_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/45/side_4_45_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/46/side_1_46_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/46/side_2_46_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/46/side_3_46_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/46/side_4_46_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/47/side_1_47_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/47/side_2_47_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/47/side_3_47_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/47/side_4_47_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/48/side_1_48_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/48/side_2_48_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/48/side_3_48_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/48/side_4_48_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/49/side_1_49_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/49/side_2_49_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/49/side_3_49_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/49/side_4_49_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/50/side_1_50_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/50/side_2_50_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/50/side_3_50_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/50/side_4_50_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/51/side_1_51_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/51/side_2_51_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/51/side_3_51_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/51/side_4_51_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/52/side_1_52_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/52/side_2_52_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/52/side_3_52_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/52/side_4_52_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/53/side_1_53_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/53/side_2_53_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/53/side_3_53_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/53/side_4_53_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/54/side_1_54_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/54/side_2_54_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/54/side_3_54_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/54/side_4_54_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/55/side_1_55_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/55/side_2_55_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/55/side_3_55_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/55/side_4_55_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/56/side_1_56_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/56/side_2_56_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/56/side_3_56_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/56/side_4_56_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/57/side_1_57_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/57/side_2_57_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/57/side_3_57_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/57/side_4_57_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/58/side_1_58_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/58/side_2_58_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/58/side_3_58_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/58/side_4_58_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/59/side_1_59_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/59/side_2_59_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/59/side_3_59_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/59/side_4_59_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/60/side_1_60_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/60/side_2_60_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/60/side_3_60_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/60/side_4_60_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/61/side_1_61_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/61/side_2_61_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/61/side_3_61_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/61/side_4_61_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/62/side_1_62_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/62/side_2_62_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/62/side_3_62_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/62/side_4_62_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/63/side_1_63_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/63/side_2_63_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/63/side_3_63_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/63/side_4_63_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/64/side_1_64_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/64/side_2_64_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/64/side_3_64_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/64/side_4_64_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/65/side_1_65_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/65/side_2_65_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/65/side_3_65_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/65/side_4_65_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/66/side_1_66_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/66/side_2_66_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/66/side_3_66_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/66/side_4_66_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/67/side_1_67_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/67/side_2_67_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/67/side_3_67_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/67/side_4_67_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/68/side_1_68_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/68/side_2_68_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/68/side_3_68_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/68/side_4_68_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/69/side_1_69_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/69/side_2_69_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/69/side_3_69_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/69/side_4_69_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/70/side_1_70_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/70/side_2_70_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/70/side_3_70_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/70/side_4_70_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/71/side_1_71_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/71/side_2_71_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/71/side_3_71_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/71/side_4_71_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/72/side_1_72_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/72/side_2_72_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/72/side_3_72_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/72/side_4_72_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/73/side_1_73_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/73/side_2_73_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/73/side_3_73_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/73/side_4_73_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/74/side_1_74_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/74/side_2_74_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/74/side_3_74_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/74/side_4_74_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/75/side_1_75_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/75/side_2_75_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/75/side_3_75_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/75/side_4_75_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/76/side_1_76_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/76/side_2_76_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/76/side_3_76_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/76/side_4_76_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/77/side_1_77_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/77/side_2_77_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/77/side_3_77_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/77/side_4_77_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/78/side_1_78_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/78/side_2_78_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/78/side_3_78_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/78/side_4_78_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/79/side_1_79_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/79/side_2_79_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/79/side_3_79_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/79/side_4_79_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/80/side_1_80_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/80/side_2_80_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/80/side_3_80_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/80/side_4_80_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/81/side_1_81_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/81/side_2_81_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/81/side_3_81_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/81/side_4_81_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/82/side_1_82_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/82/side_2_82_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/82/side_3_82_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/82/side_4_82_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/83/side_1_83_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/83/side_2_83_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/83/side_3_83_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/83/side_4_83_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/84/side_1_84_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/84/side_2_84_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/84/side_3_84_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/84/side_4_84_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/85/side_1_85_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/85/side_2_85_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/85/side_3_85_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/85/side_4_85_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/86/side_1_86_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/86/side_2_86_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/86/side_3_86_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/86/side_4_86_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/87/side_1_87_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/87/side_2_87_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/87/side_3_87_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/87/side_4_87_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/88/side_1_88_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/88/side_2_88_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/88/side_3_88_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/88/side_4_88_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/89/side_1_89_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/89/side_2_89_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/89/side_3_89_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/89/side_4_89_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/90/side_1_90_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/90/side_2_90_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/90/side_3_90_wavelength_451_photons_10000.csv\"\
+\>", ",", "\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional/side_emission/451/90/side_4_90_wavelength_451_photons_10000.csv\"\
+\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.87087925253682*^9, 3.870879267301708*^9}, 
+   3.8708793338543167`*^9, 3.870879536245831*^9, {3.87103335734182*^9, 
+   3.8710333823188753`*^9}, 3.872780556753768*^9},
+ CellLabel->"Out[80]=",ExpressionUUID->"8bece305-b0ff-4508-b4bb-ca37de0f02ae"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.870879201917452*^9, 3.8708792019202137`*^9}, 
+   3.8708792863717613`*^9},ExpressionUUID->"4dc047fa-4a57-4dda-82fd-\
+87e0b5a13e6f"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.870879298230358*^9, 
+  3.870879329084193*^9}},ExpressionUUID->"71a60eb5-0401-4441-90f3-\
+902809becf38"]
+},
+WindowSize->{1920, 1035},
+WindowMargins->{{614, Automatic}, {859, Automatic}},
+FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6fe73069-85dc-427f-b86a-d015e2e3167d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 251, 4, 30, "Input",ExpressionUUID->"0a76ce4c-2efa-4f71-b890-952d39b8a717"],
+Cell[834, 28, 340, 5, 34, "Output",ExpressionUUID->"7cefc4d2-c909-4e6a-ae5e-98c9dd3e4eef"]
+}, Open  ]],
+Cell[1189, 36, 1932, 40, 73, "Input",ExpressionUUID->"c088a4f2-9c83-4c82-a6ad-ea3c65228eb3"],
+Cell[CellGroupData[{
+Cell[3146, 80, 1039, 18, 52, "Input",ExpressionUUID->"cd6551ff-6036-41d4-893f-74dd9b3829a5"],
+Cell[4188, 100, 449, 10, 34, "Output",ExpressionUUID->"ff327c46-9183-4e03-9d89-024b882862cb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4674, 115, 480, 8, 30, "Input",ExpressionUUID->"cbfbec54-6bd9-4738-9abc-502d78528f33"],
+Cell[5157, 125, 190, 3, 34, "Output",ExpressionUUID->"5eafff47-a883-4245-b9f9-d4f981814741"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5384, 133, 376, 6, 30, "Input",ExpressionUUID->"a29ddd42-6834-452b-8d70-84ba3ad15feb"],
+Cell[5763, 141, 217, 3, 34, "Output",ExpressionUUID->"a696aa4b-e09d-457d-bf28-c662d6aab83f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6017, 149, 1632, 33, 115, "Input",ExpressionUUID->"dc94c341-4d88-43b0-b006-5479adc8c788"],
+Cell[7652, 184, 74318, 1266, 7597, "Output",ExpressionUUID->"8bece305-b0ff-4508-b4bb-ca37de0f02ae"]
+}, Open  ]],
+Cell[81985, 1453, 179, 3, 30, "Input",ExpressionUUID->"4dc047fa-4a57-4dda-82fd-87e0b5a13e6f"],
+Cell[82167, 1458, 152, 3, 30, "Input",ExpressionUUID->"71a60eb5-0401-4441-90f3-902809becf38"]
+}
+]
+*)
+

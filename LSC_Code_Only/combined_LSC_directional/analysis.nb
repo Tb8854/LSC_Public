@@ -1,0 +1,150 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      5188,        149]
+NotebookOptionsPosition[      3678,        109]
+NotebookOutlinePosition[      4078,        125]
+CellTagsIndexPosition[      4035,        122]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8727526520953217`*^9, 3.872752660661971*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"5931e30f-a4c8-480e-968b-b2ca32fdbc7c"],
+
+Cell[BoxData["\<\"/Users/tomi/Dropbox (Cambridge \
+University)/Physics/SimulationsLSC/Example_simulation/combined_LSC_\
+directional\"\>"], "Output",
+ CellChangeTimes->{
+  3.872752663239171*^9, 3.872753369800499*^9, {3.872754829533497*^9, 
+   3.872754854148843*^9}},
+ CellLabel->"Out[20]=",ExpressionUUID->"ecc6af24-f014-4030-8700-4a943a01246e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Import", "[", "#", "]"}], "&"}], "/@", 
+    RowBox[{"FileNames", "[", "\"\<./side_emission/450/90/*\>\"", "]"}]}], 
+   "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.872752626974666*^9, 3.872752627918809*^9}, {
+  3.872752673630516*^9, 3.872752730214573*^9}, {3.872753374049955*^9, 
+  3.872753387554826*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"57e2d9d6-d7f6-4695-a152-b9023ff294b8"],
+
+Cell[BoxData["596"], "Output",
+ CellChangeTimes->{{3.872752698884264*^9, 3.872752730708703*^9}, 
+   3.8727533884599047`*^9},
+ CellLabel->"Out[13]=",ExpressionUUID->"b04cfccf-cec0-47e8-ae86-9d5266f428ff"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Import", "[", "#", "]"}], "&"}], "/@", 
+    RowBox[{"FileNames", "[", "\"\<./side_emission/451/90/*\>\"", "]"}]}], 
+   "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.872752748456346*^9, 3.8727527509160767`*^9}, {
+  3.872753401590495*^9, 3.8727534034258013`*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"af5bf9f9-761b-4317-81cb-5997b20fded2"],
+
+Cell[BoxData["19043"], "Output",
+ CellChangeTimes->{3.8727527514582863`*^9, 3.872753404442363*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"c2d004f1-57a5-4349-8605-369203864605"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Import", "[", "#", "]"}], "&"}], "/@", 
+    RowBox[{
+    "FileNames", "[", "\"\<./side_emission/450_dot_LSC/90/*\>\"", "]"}]}], 
+   "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.872754815281042*^9, 3.8727548168339367`*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"c79ccb70-d67b-479a-98ac-5ac71f423075"],
+
+Cell[BoxData["7123"], "Output",
+ CellChangeTimes->{{3.872754817295679*^9, 3.872754852677322*^9}, 
+   3.872754921766509*^9},
+ CellLabel->"Out[21]=",ExpressionUUID->"66ebbd59-eb0a-4d60-84a8-67c52dd4dec2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Import", "[", "#", "]"}], "&"}], "/@", 
+    RowBox[{
+    "FileNames", "[", "\"\<./side_emission/450_PM_LSC/90/*\>\"", "]"}]}], 
+   "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8727551239852324`*^9, 3.87275512410886*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"a693be76-856e-49ff-9cfc-0a07c293914c"],
+
+Cell[BoxData["14461"], "Output",
+ CellChangeTimes->{3.872755124712332*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"8e0cca37-a477-475a-9e80-68de8c23d161"]
+}, Open  ]]
+},
+WindowSize->{808, 710},
+WindowMargins->{{-772, Automatic}, {Automatic, -984}},
+FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"15501e79-2001-4bf4-8a84-c6ef71c49874"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[422, 15, 251, 4, 30, "Input",ExpressionUUID->"5931e30f-a4c8-480e-968b-b2ca32fdbc7c"],
+Cell[676, 21, 344, 6, 56, "Output",ExpressionUUID->"ecc6af24-f014-4030-8700-4a943a01246e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1057, 32, 490, 11, 30, "Input",ExpressionUUID->"57e2d9d6-d7f6-4695-a152-b9023ff294b8"],
+Cell[1550, 45, 203, 3, 34, "Output",ExpressionUUID->"b04cfccf-cec0-47e8-ae86-9d5266f428ff"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1790, 53, 445, 10, 30, "Input",ExpressionUUID->"af5bf9f9-761b-4317-81cb-5997b20fded2"],
+Cell[2238, 65, 177, 2, 34, "Output",ExpressionUUID->"c2d004f1-57a5-4349-8605-369203864605"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2452, 72, 407, 10, 30, "Input",ExpressionUUID->"c79ccb70-d67b-479a-98ac-5ac71f423075"],
+Cell[2862, 84, 202, 3, 34, "Output",ExpressionUUID->"66ebbd59-eb0a-4d60-84a8-67c52dd4dec2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3101, 92, 405, 10, 30, "Input",ExpressionUUID->"a693be76-856e-49ff-9cfc-0a07c293914c"],
+Cell[3509, 104, 153, 2, 34, "Output",ExpressionUUID->"8e0cca37-a477-475a-9e80-68de8c23d161"]
+}, Open  ]]
+}
+]
+*)
+

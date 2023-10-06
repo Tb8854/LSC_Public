@@ -1,0 +1,373 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13392,        365]
+NotebookOptionsPosition[     12346,        342]
+NotebookOutlinePosition[     12740,        358]
+CellTagsIndexPosition[     12697,        355]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"spectralist1", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<./Denver/fullspectra2018\>\"", "<>", 
+     RowBox[{"ToString", "[", "1", "]"}], "<>", "\"\<.mx\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectralist2", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<./Denver/fullspectra2018\>\"", "<>", 
+     RowBox[{"ToString", "[", "2", "]"}], "<>", "\"\<.mx\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectralist3", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<./Denver/fullspectra2018\>\"", "<>", 
+     RowBox[{"ToString", "[", "3", "]"}], "<>", "\"\<.mx\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectralist4", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<./Denver/fullspectra2018\>\"", "<>", 
+     RowBox[{"ToString", "[", "4", "]"}], "<>", "\"\<.mx\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectralist5", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<./Denver/fullspectra2018\>\"", "<>", 
+     RowBox[{"ToString", "[", "5", "]"}], "<>", "\"\<.mx\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectralist6", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<./Denver/fullspectra2018\>\"", "<>", 
+     RowBox[{"ToString", "[", "6", "]"}], "<>", "\"\<.mx\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectralist7", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<./Denver/fullspectra2018\>\"", "<>", 
+     RowBox[{"ToString", "[", "7", "]"}], "<>", "\"\<.mx\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectralist8", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<./Denver/fullspectra2018\>\"", "<>", 
+     RowBox[{"ToString", "[", "8", "]"}], "<>", "\"\<.mx\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectralist9", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<./Denver/fullspectra2018\>\"", "<>", 
+     RowBox[{"ToString", "[", "9", "]"}], "<>", "\"\<.mx\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectralist10", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<./Denver/fullspectra2018\>\"", "<>", 
+     RowBox[{"ToString", "[", "10", "]"}], "<>", "\"\<.mx\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectralist11", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<./Denver/fullspectra2018\>\"", "<>", 
+     RowBox[{"ToString", "[", "11", "]"}], "<>", "\"\<.mx\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectralist12", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<./Denver/fullspectra2018\>\"", "<>", 
+     RowBox[{"ToString", "[", "12", "]"}], "<>", "\"\<.mx\>\""}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.873559878996475*^9, 3.873559936447145*^9}},
+ CellLabel->
+  "In[3057]:=",ExpressionUUID->"8398443d-dd1e-4598-969c-03d17a370673"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"LSC", " ", "orientation"}], ";", " ", 
+    RowBox[{
+    "vector", " ", "defining", " ", "its", " ", "surface", " ", "normal", " ",
+      "in", " ", "degrees"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"lscAltitude", "=", "0"}], " ", ";"}], 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"0", " ", "is", " ", "vertical"}], ",", " ", 
+     RowBox[{"90", " ", "is", " ", "horizontal"}]}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"lscAzimuth", " ", "=", " ", "180"}], ";"}], 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"0", " ", "is", " ", "facing", " ", "North"}], ",", " ", 
+     RowBox[{"180", " ", "is", " ", "facing", " ", "South"}]}], "*)"}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"sphericaltoCartesian", "[", 
+      RowBox[{"\[Theta]_", ",", "\[Phi]_"}], "]"}], "=", 
+     RowBox[{"FromSphericalCoordinates", "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", 
+        RowBox[{
+         RowBox[{"\[Pi]", "/", "180."}], 
+         RowBox[{"(", 
+          RowBox[{"90.", "-", "\[Theta]"}], ")"}]}], ",", 
+        RowBox[{
+         RowBox[{"-", "\[Pi]"}], "+", 
+         RowBox[{"2", 
+          RowBox[{"\[Pi]", " ", "/", "360."}], "\[Phi]"}]}]}], "}"}], "]"}]}],
+     ";"}], 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"shifted", " ", "to", " ", "our", " ", "angle", " ", 
+      RowBox[{"definition", ":", " ", 
+       RowBox[{
+       "normal", " ", "definition", " ", "is", " ", "theta", " ", "from", " ",
+         "0", " ", "to", " ", "pi"}]}]}], ",", " ", 
+     RowBox[{
+      RowBox[{"phi", " ", "from"}], " ", "-", 
+      RowBox[{"pi", " ", "to", " ", "pi"}]}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"normDot", "[", 
+      RowBox[{"a_", ",", "b_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"a", ".", "b"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Norm", "[", "a", "]"}], 
+        RowBox[{"Norm", "[", "b", "]"}]}], ")"}]}]}], ";"}], 
+   RowBox[{"(*", 
+    RowBox[{
+    "normed", " ", "dotproduct", " ", "to", " ", "calculate", " ", "the", " ",
+      "angle", " ", "between", " ", "sun", " ", "angle", " ", "and", " ", 
+     "surface", " ", "normal"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"realAngleAtLSC", "[", " ", 
+      RowBox[{"\[Theta]_", ",", " ", "\[Phi]_"}], "]"}], " ", ":=", " ", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{
+       "effective", " ", "angle", " ", "between", " ", "lsc", " ", "and", " ",
+         "sun"}], ",", " ", 
+       RowBox[{
+       "we", " ", "can", " ", "do", " ", "this", " ", "since", " ", "the", 
+        " ", "lsc", " ", "is", " ", "symmetric", " ", "in", " ", "the", " ", 
+        "plane"}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"a", ",", " ", "b"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"a", " ", "=", " ", 
+         RowBox[{"sphericaltoCartesian", "[", 
+          RowBox[{"lscAltitude", ",", "lscAzimuth"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"b", " ", "=", 
+         RowBox[{"sphericaltoCartesian", "[", 
+          RowBox[{"\[Theta]", ",", "\[Phi]"}], "]"}]}], ";", 
+        RowBox[{"(*", 
+         RowBox[{
+         "this", " ", "is", " ", "the", " ", "orientation", " ", "of", " ", 
+          "the", " ", "surface", " ", "normal", " ", "of", " ", "the", " ", 
+          "LSC"}], "*)"}], "\n", 
+        RowBox[{"90", 
+         RowBox[{"(*", 
+          RowBox[{
+          "go", " ", "from", " ", "surface", " ", "normal", " ", "angle", " ",
+            "to", " ", "surface", " ", "angle"}], "*)"}], "-", " ", 
+         RowBox[{
+          RowBox[{"ArcCos", "[", " ", 
+           RowBox[{"normDot", "[", 
+            RowBox[{"a", ",", " ", "b"}], "]"}], "]"}], 
+          RowBox[{"360.", "/", 
+           RowBox[{"(", 
+            RowBox[{"2", "\[Pi]"}], ")"}]}]}]}]}]}], "\n", "  ", "]"}]}], 
+    ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.873560029688949*^9, 3.8735600334527397`*^9}},
+ CellLabel->
+  "In[3069]:=",ExpressionUUID->"8ae5ce0d-0c66-4ae6-a480-ef5322a7aa1c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"getmeangles", "[", "data_", "]"}], ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"angles1", ",", "times1", ","}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"angles1", " ", "=", " ", 
+       RowBox[{"data", "[", 
+        RowBox[{"[", 
+         RowBox[{";;", ",", 
+          RowBox[{"{", 
+           RowBox[{"2", ",", 
+            RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"angles1", " ", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"realAngleAtLSC", "[", 
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "&"}], "/@", 
+        "angles1"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"times1", "=", 
+       RowBox[{"data", "[", 
+        RowBox[{"[", 
+         RowBox[{";;", ",", "1"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"times1", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"DateString", "[", "#", "]"}], "&"}], "/@", "times1"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", 
+       RowBox[{"Transpose", "[", 
+        RowBox[{"{", 
+         RowBox[{"times1", ",", "angles1"}], "}"}], "]"}], "]"}], ";"}]}], 
+    "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.873560166439204*^9, 3.8735602391534452`*^9}, {
+  3.873560271859866*^9, 3.873560336889538*^9}},
+ CellLabel->
+  "In[3074]:=",ExpressionUUID->"50a1920e-3446-4e67-9ef1-9f6e17a117b2"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"jan", " ", "=", " ", 
+   RowBox[{"getmeangles", "[", "spectralist1", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"feb", " ", "=", " ", 
+   RowBox[{"getmeangles", "[", "spectralist2", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mar", " ", "=", " ", 
+   RowBox[{"getmeangles", "[", "spectralist3", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"april", " ", "=", " ", 
+   RowBox[{"getmeangles", "[", "spectralist4", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"may", " ", "=", " ", 
+   RowBox[{"getmeangles", "[", "spectralist5", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"june", " ", "=", " ", 
+   RowBox[{"getmeangles", "[", "spectralist6", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"july", " ", "=", " ", 
+   RowBox[{"getmeangles", "[", "spectralist7", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"aug", " ", "=", " ", 
+   RowBox[{"getmeangles", "[", "spectralist8", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sept", " ", "=", " ", 
+   RowBox[{"getmeangles", "[", "spectralist9", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"oct", " ", "=", " ", 
+   RowBox[{"getmeangles", "[", "spectralist10", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"nov", " ", "=", " ", 
+   RowBox[{"getmeangles", "[", "spectralist11", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dec", " ", "=", " ", 
+   RowBox[{"getmeangles", "[", "spectralist12", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.87356033954503*^9, 3.873560407220129*^9}},
+ CellLabel->
+  "In[3075]:=",ExpressionUUID->"46244b49-e579-40db-be09-627c7332f863"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"year", "=", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+    "jan", ",", "feb", ",", "mar", ",", "april", ",", "may", ",", "june", ",",
+      "july", ",", "aug", ",", "sept", ",", "oct", ",", "nov", ",", "dec"}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.873560414879859*^9, 3.873560435735672*^9}},
+ CellLabel->
+  "In[3087]:=",ExpressionUUID->"ea180913-d763-49c2-850d-d777de62bfbd"],
+
+Cell[BoxData[
+ RowBox[{"DateListPlot", "[", "year", "]"}]], "Input",
+ CellChangeTimes->{{3.8736491277625933`*^9, 3.873649130654922*^9}, {
+  3.8736494317896976`*^9, 3.8736494360265512`*^9}},
+ CellLabel->
+  "In[3090]:=",ExpressionUUID->"943127c2-68c4-45b3-acce-1c1083c0078d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<windowyear.csv\>\"", ",", "year"}], "]"}]], "Input",
+ CellChangeTimes->{{3.873649520902528*^9, 3.873649531007908*^9}},
+ CellLabel->
+  "In[3091]:=",ExpressionUUID->"32c39139-b325-4c93-8031-c510d77967b9"],
+
+Cell[BoxData["\<\"windowyear.csv\"\>"], "Output",
+ CellChangeTimes->{3.8736493815442543`*^9, 3.873649449234502*^9, 
+  3.8736495324909143`*^9},
+ CellLabel->
+  "Out[3091]=",ExpressionUUID->"868e9fb5-c3c4-4035-a00d-0e24e7e2c916"]
+}, Open  ]]
+},
+WindowSize->{980, 767},
+WindowMargins->{{Automatic, 238}, {30, Automatic}},
+FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"4cc5a274-5e89-40d4-beb6-927b4ba52959"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2941, 75, 262, "Input",ExpressionUUID->"8398443d-dd1e-4598-969c-03d17a370673"],
+Cell[3502, 97, 4198, 109, 346, "Input",ExpressionUUID->"8ae5ce0d-0c66-4ae6-a480-ef5322a7aa1c"],
+Cell[7703, 208, 1662, 45, 178, "Input",ExpressionUUID->"50a1920e-3446-4e67-9ef1-9f6e17a117b2"],
+Cell[9368, 255, 1751, 50, 262, "Input",ExpressionUUID->"46244b49-e579-40db-be09-627c7332f863"],
+Cell[11122, 307, 422, 10, 30, "Input",ExpressionUUID->"ea180913-d763-49c2-850d-d777de62bfbd"],
+Cell[11547, 319, 273, 5, 30, "Input",ExpressionUUID->"943127c2-68c4-45b3-acce-1c1083c0078d"],
+Cell[CellGroupData[{
+Cell[11845, 328, 256, 5, 30, "Input",ExpressionUUID->"32c39139-b325-4c93-8031-c510d77967b9"],
+Cell[12104, 335, 226, 4, 71, "Output",ExpressionUUID->"868e9fb5-c3c4-4035-a00d-0e24e7e2c916"]
+}, Open  ]]
+}
+]
+*)
+
